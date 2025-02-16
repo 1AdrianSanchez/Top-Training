@@ -89,9 +89,13 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
     private void guardarCambios() {
         String nuevoNombre = editText.getText().toString().trim();
+        String nombreGuardado = prefe.getString("nombre_usuario", "");
 
-        if (nuevoNombre.isEmpty() && imageUri == null) {
-            Toast.makeText(this, "No hay cambios para guardar", Toast.LENGTH_SHORT).show();
+        if (nuevoNombre.isEmpty()) {
+            Toast.makeText(this, "Debe introducir un nombre", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (nombreGuardado.equals(nuevoNombre)) {
+            Toast.makeText(this, "El nombre es el mismo", Toast.LENGTH_SHORT).show();
             return;
         }
 
