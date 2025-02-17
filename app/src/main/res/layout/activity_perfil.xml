@@ -33,7 +33,7 @@
         android:id="@+id/textView5"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Correo electrónico"
+        android:text="correo_electrónico@gmail.com"
         app:layout_constraintBottom_toTopOf="@+id/editar_perfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

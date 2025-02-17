@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -40,6 +41,11 @@ public class EditarPerfilActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Editar perfil");
 
         imagen = findViewById(R.id.imageView3);
         editText = findViewById(R.id.editTextText);
@@ -91,11 +97,11 @@ public class EditarPerfilActivity extends AppCompatActivity {
         String nuevoNombre = editText.getText().toString().trim();
         String nombreGuardado = prefe.getString("nombre_usuario", "");
 
-        if (nuevoNombre.isEmpty()) {
-            Toast.makeText(this, "Debe introducir un nombre", Toast.LENGTH_SHORT).show();
+        if (nuevoNombre.isEmpty() && imageUri == null) {
+            Toast.makeText(this, "Debe introducir un nombre o cambiar la foto", Toast.LENGTH_SHORT).show();
             return;
-        } else if (nombreGuardado.equals(nuevoNombre)) {
-            Toast.makeText(this, "El nombre es el mismo", Toast.LENGTH_SHORT).show();
+        } else if (nombreGuardado.equals(nuevoNombre) && imageUri == null) {
+            Toast.makeText(this, "El nombre es el mismo y no se ha cambiado la imagen", Toast.LENGTH_SHORT).show();
             return;
         }
 
