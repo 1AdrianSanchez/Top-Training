@@ -54,7 +54,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
         prefe = getSharedPreferences("datos", Context.MODE_PRIVATE);
 
-        // Cargar datos guardados previamente
+        //Cargar datos guardados previamente
         cargarDatosGuardados();
 
         cambiarFoto.setOnClickListener(new View.OnClickListener() {
@@ -83,11 +83,11 @@ public class EditarPerfilActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CODIGO_IMAGEN) {
             if (resultCode == RESULT_OK && data != null && data.getData() != null) {
-                // Si el usuario selecciona una imagen, la mostramos
+                //Si el usuario selecciona una imagen, la mostramos
                 imageUri = data.getData();
                 imagen.setImageURI(imageUri);
             } else if (resultCode == RESULT_CANCELED) {
-                // Si el usuario cancela, volvemos a la imagen predeterminada
+                //Si el usuario cancela, volvemos a la imagen predeterminada
                 imagen.setImageResource(R.drawable.bordalas);
             }
         }
@@ -134,7 +134,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
         editor.apply();
         Toast.makeText(this, "Cambios guardados", Toast.LENGTH_SHORT).show();
-        finish(); // Cierra la actividad y vuelve al perfil
+        finish(); //Cierra la actividad y vuelve al perfil
     }
 
     private void cargarDatosGuardados() {
@@ -150,7 +150,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
             imagen.setImageBitmap(bitmap);
         } else {
-            // Si NO hay imagen guardada, usar bordalas.png como predeterminada
+            //Si NO hay imagen guardada, usar bordalas.png como predeterminada
             imagen.setImageResource(R.drawable.bordalas);
             imageUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.bordalas);
         }

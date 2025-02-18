@@ -34,18 +34,18 @@ public class EjercicioActivity extends AppCompatActivity {
         TextView textDescripcion = findViewById(R.id.textView3);
         ImageView imageEjercicio = findViewById(R.id.imageView);
 
-        // Obtener datos del intent
+        //Obtener datos del intent
         String titulo = getIntent().getStringExtra("titulo");
         String categoria = getIntent().getStringExtra("categoria");
         String descripcion = getIntent().getStringExtra("descripcion");
         String imagenUrl = getIntent().getStringExtra("imagen");
 
-        // Asignar datos a la UI
+        //Asignar datos a la UI
         textTitulo.setText(titulo);
         textCategoria.setText(categoria);
         textDescripcion.setText(descripcion);
 
-        // Cargar imagen (si tienes una URL válida)
+        //Cargar imagen (si tienes una URL válida)
         // Glide.with(this).load(imagenUrl).into(imageEjercicio);
     }
 }

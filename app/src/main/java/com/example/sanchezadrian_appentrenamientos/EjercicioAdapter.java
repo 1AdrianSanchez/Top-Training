@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class EjercicioAdapter extends RecyclerView.Adapter<EjercicioAdapter.EjercicioViewHolder> {
-
     private List<Ejercicio> ejercicios;
     private Context context;
 
@@ -38,8 +37,8 @@ public class EjercicioAdapter extends RecyclerView.Adapter<EjercicioAdapter.Ejer
         holder.categoria.setText(ejercicio.getCategoria());
         holder.imagen.setImageResource(ejercicio.getImagen());
 
-        // Si necesitas cargar imágenes, usa Glide o Picasso
-        // Glide.with(context).load(ejercicio.getImagen()).into(holder.imagen);
+        //Si necesitas cargar imágenes, usa Glide o Picasso
+        //Glide.with(context).load(ejercicio.getImagen()).into(holder.imagen);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

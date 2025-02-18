@@ -44,7 +44,7 @@ public class BuscarActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Lista de ejercicios
+        //Lista de ejercicios
         listaEjercicios = new ArrayList<>();
         listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
                 "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
@@ -69,7 +69,7 @@ public class BuscarActivity extends AppCompatActivity {
         adapter = new EjercicioAdapter(listaFiltrada, this);
         recyclerView.setAdapter(adapter);
 
-        // Configurar búsqueda en tiempo real
+        //Configurar búsqueda en tiempo real
         busqueda.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -83,7 +83,7 @@ public class BuscarActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        // Botones de filtro por categoría
+        //Botones de filtro por categoría
         Button salidaBalon = findViewById(R.id.salida_balon);
         Button ataquePosicional = findViewById(R.id.ataque_posicional);
         Button finalizacion = findViewById(R.id.finalizacion);

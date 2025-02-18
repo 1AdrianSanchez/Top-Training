@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private EjercicioAdapter adapter;
-    private List<Ejercicio> listaEjercicios;
+    private static List<Ejercicio> listaEjercicios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,14 +79,17 @@ public class MainActivity extends AppCompatActivity {
                 } else if (itemId == R.id.nav_perfil) {
                     startActivity(new Intent(MainActivity.this, PerfilActivity.class));
                     return true;
-                } //else if (itemId == R.id.nav_subir) {
-//                    startActivity(new Intent(MainActivity.this, SubirEjercicioActivity.class));
-//                    return true;
-//                }
+                } else if (itemId == R.id.nav_subir) {
+                    startActivity(new Intent(MainActivity.this, SubirEjercicioActivity.class));
+                    return true;
+                }
 
                 return false;
             }
         });
+    }
 
+    public static void agregarEjercicio(Ejercicio ejercicio) {
+        listaEjercicios.add(ejercicio);
     }
 }
