@@ -2,10 +2,12 @@ package com.example.sanchezadrian_appentrenamientos;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
@@ -13,6 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,21 +67,24 @@ public class MainActivity extends AppCompatActivity {
         adapter = new EjercicioAdapter(listaEjercicios, this);
         recyclerView.setAdapter(adapter);
 
-        Button buscar = findViewById(R.id.buscar_ejercicios);
-        buscar.setOnClickListener(new View.OnClickListener() {
+        BottomNavigationView navigator = findViewById(R.id.bottom_navigation);
+        navigator.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BuscarActivity.class);
-                startActivity(intent);
-            }
-        });
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
 
-        Button perfil = findViewById(R.id.perfil);
-        perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PerfilActivity.class);
-                startActivity(intent);
+                if (itemId == R.id.nav_buscar) {
+                    startActivity(new Intent(MainActivity.this, BuscarActivity.class));
+                    return true;
+                } else if (itemId == R.id.nav_perfil) {
+                    startActivity(new Intent(MainActivity.this, PerfilActivity.class));
+                    return true;
+                } //else if (itemId == R.id.nav_subir) {
+//                    startActivity(new Intent(MainActivity.this, SubirEjercicioActivity.class));
+//                    return true;
+//                }
+
+                return false;
             }
         });
 
