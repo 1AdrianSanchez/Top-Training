@@ -40,7 +40,7 @@ public class EjercicioActivity extends AppCompatActivity {
         String descripcion = getIntent().getStringExtra("descripcion");
         String imagenUrl = getIntent().getStringExtra("imagen");
 
-        //Asignar datos a la UI
+        //Mostrar los datos en la interfaz del usuario
         textTitulo.setText(titulo);
         textCategoria.setText(categoria);
         textDescripcion.setText(descripcion);
