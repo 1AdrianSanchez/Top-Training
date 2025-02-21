@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/search_bar"
-        android:layout_width="409dp"
+        android:layout_width="400dp"
         android:layout_height="56dp"
         android:background="@android:drawable/editbox_background"
         android:hint="Buscar ejercicio..."
@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/salida_balon"
-        android:layout_width="409dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:text="Salida de balón"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
@@ -32,7 +32,7 @@
 
     <Button
         android:id="@+id/ataque_posicional"
-        android:layout_width="409dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:text="Ataque Posicional"
         app:layout_constraintBottom_toTopOf="@+id/finalizacion"
@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/finalizacion"
-        android:layout_width="409dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:text="Finalización"
         app:layout_constraintBottom_toTopOf="@+id/salida_balon"
@@ -52,7 +52,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="411dp"
+        android:layout_width="400dp"
         android:layout_height="402dp"
         android:paddingTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"

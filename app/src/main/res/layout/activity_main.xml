@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/cerrar_sesion"
-        android:layout_width="409dp"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:text="Cerrar Sesión"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
@@ -19,7 +19,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="403dp"
+        android:layout_width="400dp"
         android:layout_height="462dp"
         app:layout_constraintBottom_toTopOf="@+id/cerrar_sesion"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,10 +40,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_navigation_menu"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:menu="@menu/bottom_navigation_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
