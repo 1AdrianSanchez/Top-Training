@@ -63,14 +63,14 @@ public class EditarPerfilActivity extends AppCompatActivity {
         cambiarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                // Verifica si ya se tiene el permiso de llamada
+//                //Verifica si ya se tiene el permiso de llamada
 //                if (ContextCompat.checkSelfPermission(EditarPerfilActivity.this, android.Manifest.permission.READ_MEDIA_IMAGES)
 //                        != PackageManager.PERMISSION_GRANTED) {
 //                    // Si no se tiene el permiso, solicita el permiso
 //                    ActivityCompat.requestPermissions(EditarPerfilActivity.this,
 //                            new String[]{android.Manifest.permission.READ_MEDIA_IMAGES}, CODIGO_IMAGEN);
 //                } else {
-//                    // Si se tiene el permiso, abre la galeria
+//                    //Si se tiene el permiso, abre la galeria
 //                    abrirGaleria();
 //                }
                 abrirGaleria();
@@ -149,7 +149,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else {
-            // Si no hay imagen seleccionada, guardar bordalas.png como predeterminada
+            //Si NO hay imagen seleccionada, guardar bordalas.png como predeterminada
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bordalas);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);

@@ -21,7 +21,7 @@ import java.util.List;
 
 public class BuscarActivity extends AppCompatActivity {
     private EjercicioAdapter adapter;
-    private List<Ejercicio> listaEjercicios;
+    private List<Ejercicio> listaEjercicios = MainActivity.listaEjercicios;
     private List<Ejercicio> listaFiltrada;
 
     @Override
@@ -43,27 +43,6 @@ public class BuscarActivity extends AppCompatActivity {
         EditText busqueda = findViewById(R.id.search_bar);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //Lista de ejercicios
-        listaEjercicios = new ArrayList<>();
-        listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-        listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
-                "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-        listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
-                "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
-        listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-        listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
-                "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-        listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
-                "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
-        listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-        listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
-                "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-        listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
-                "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
 
         listaFiltrada = new ArrayList<>(listaEjercicios);
         adapter = new EjercicioAdapter(listaFiltrada, this);

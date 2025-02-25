@@ -60,7 +60,7 @@ public class PerfilActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Recargar los datos cuando la actividad vuelva a estar activa
+        //Recargar los datos cuando la actividad vuelva a estar activa
         cargarDatosPerfil();
     }
 
@@ -75,7 +75,7 @@ public class PerfilActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
             imagen.setImageBitmap(bitmap);
         } else {
-            // Si no hay imagen guardada, usa la imagen predeterminada
+            //Si no hay imagen guardada, usa la imagen predeterminada
             imagen.setImageResource(R.drawable.bordalas);
         }
     }

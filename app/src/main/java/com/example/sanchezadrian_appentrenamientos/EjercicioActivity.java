@@ -46,6 +46,6 @@ public class EjercicioActivity extends AppCompatActivity {
         textDescripcion.setText(descripcion);
 
         //Cargar imagen (si tienes una URL válida)
-        // Glide.with(this).load(imagenUrl).into(imageEjercicio);
+        //Glide.with(this).load(imagenUrl).into(imageEjercicio);
     }
 }
