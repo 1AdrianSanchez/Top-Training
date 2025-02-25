@@ -1,6 +1,8 @@
 package com.example.sanchezadrian_appentrenamientos;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -86,6 +88,29 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 return false;
+            }
+        });
+
+        Button cerrarSesion = findViewById(R.id.cerrar_sesion);
+        SharedPreferences prefe = getSharedPreferences("sesion", Context.MODE_PRIVATE);
+
+        //Comprobamos si no hay sesión iniciada
+        if (!prefe.getBoolean("isLoggedIn", false)) {
+            // Si no hay sesión, redirigimos al LoginActivity
+            startActivity(new Intent(MainActivity.this, LogginActivity.class));
+            finish();
+        }
+
+        cerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = prefe.edit();
+                editor.putBoolean("isLoggedIn", false);
+                editor.apply();
+
+                //Redirigir al LoginActivity
+                startActivity(new Intent(MainActivity.this, LogginActivity.class));
+                finish();
             }
         });
     }

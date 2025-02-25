@@ -3,6 +3,7 @@ package com.example.sanchezadrian_appentrenamientos;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -17,6 +18,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -60,6 +63,16 @@ public class EditarPerfilActivity extends AppCompatActivity {
         cambiarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                // Verifica si ya se tiene el permiso de llamada
+//                if (ContextCompat.checkSelfPermission(EditarPerfilActivity.this, android.Manifest.permission.READ_MEDIA_IMAGES)
+//                        != PackageManager.PERMISSION_GRANTED) {
+//                    // Si no se tiene el permiso, solicita el permiso
+//                    ActivityCompat.requestPermissions(EditarPerfilActivity.this,
+//                            new String[]{android.Manifest.permission.READ_MEDIA_IMAGES}, CODIGO_IMAGEN);
+//                } else {
+//                    // Si se tiene el permiso, abre la galeria
+//                    abrirGaleria();
+//                }
                 abrirGaleria();
             }
         });
@@ -92,6 +105,19 @@ public class EditarPerfilActivity extends AppCompatActivity {
             }
         }
     }
+
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (requestCode == CODIGO_IMAGEN) {
+//            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                //Realizamos la acción
+//                abrirGaleria();
+//            } else {
+//                Toast.makeText(this,"Sin el permiso, no puedo realizar la acción",Toast.LENGTH_LONG).show();
+//            }
+//        }
+//    }
 
     private void guardarCambios() {
         String nuevoNombre = editText.getText().toString().trim();

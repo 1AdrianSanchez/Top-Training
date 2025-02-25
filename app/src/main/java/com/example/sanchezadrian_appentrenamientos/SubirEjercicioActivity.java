@@ -1,6 +1,7 @@
 package com.example.sanchezadrian_appentrenamientos;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,12 +15,15 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SubirEjercicioActivity extends AppCompatActivity {
     private static final int CODIGO_IMAGEN = 1;
+    private static final int CODIGO_PERMISO = 2;
     private Uri imageUri;
     EditText textTitulo;
     EditText textCategoria;
@@ -52,6 +56,16 @@ public class SubirEjercicioActivity extends AppCompatActivity {
         subirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                // Verifica si ya se tiene el permiso de llamada
+//                if (ContextCompat.checkSelfPermission(SubirEjercicioActivity.this, android.Manifest.permission.READ_MEDIA_IMAGES)
+//                        != PackageManager.PERMISSION_GRANTED) {
+//                    // Si no se tiene el permiso, solicita el permiso
+//                    ActivityCompat.requestPermissions(SubirEjercicioActivity.this,
+//                            new String[]{android.Manifest.permission.READ_MEDIA_IMAGES}, CODIGO_IMAGEN);
+//                } else {
+//                    // Si se tiene el permiso, abre la galeria
+//                    abrirGaleria();
+//                }
                 abrirGaleria();
             }
         });
@@ -89,11 +103,24 @@ public class SubirEjercicioActivity extends AppCompatActivity {
         if (requestCode == CODIGO_IMAGEN && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             try {
-                Bitmap bitmap = android.provider.MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);  // Convertir la URI a un Bitmap
+                Bitmap bitmap = android.provider.MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);  //Convertir la URI a un Bitmap
                 imagen.setImageBitmap(bitmap);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
+
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if (requestCode == CODIGO_IMAGEN) {
+//            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                //Realizamos la acción
+//                abrirGaleria();
+//            } else {
+//                Toast.makeText(this,"Sin el permiso, no puedo realizar la acción",Toast.LENGTH_LONG).show();
+//            }
+//        }
+//    }
 }
