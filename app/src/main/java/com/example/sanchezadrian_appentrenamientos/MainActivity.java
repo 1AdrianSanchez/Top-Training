@@ -23,6 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private EjercicioAdapter adapter;
+    private RecyclerView recyclerView;
     private static List<Ejercicio> listaEjercicios;
 
     @Override
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("App Entrenamientos");
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Datos metidos a mano (se deberian cargar desde una base de datos o API)
@@ -87,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Recargar los datos cuando la actividad vuelva a estar activa
+        adapter = new EjercicioAdapter(listaEjercicios, this);
+        recyclerView.setAdapter(adapter);
     }
 
     public static void agregarEjercicio(Ejercicio ejercicio) {
