@@ -25,7 +25,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private EjercicioAdapter adapter;
-    private static List<Ejercicio> listaEjercicios;
+    private RecyclerView recyclerView;
+    public static List<Ejercicio> listaEjercicios = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,29 +43,30 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("App Entrenamientos");
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Datos metidos a mano (se deberian cargar desde una base de datos o API)
-        listaEjercicios = new ArrayList<>();
-        listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-        listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
-                "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-        listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
-                "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
-        listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-        listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
-                "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-        listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
-                "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
-        listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-        listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
-                "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-        listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
-                "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
+        if (listaEjercicios.isEmpty()) {
+            listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
+                    "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
+            listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
+                    "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
+            listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
+                    "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
+            listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
+                    "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
+            listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
+                    "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
+            listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
+                    "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
+            listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
+                    "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
+            listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
+                    "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
+            listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
+                    "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
+        }
 
         adapter = new EjercicioAdapter(listaEjercicios, this);
         recyclerView.setAdapter(adapter);
@@ -112,6 +114,14 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //Recargar los datos cuando la actividad vuelva a estar activa
+        adapter = new EjercicioAdapter(listaEjercicios, this);
+        recyclerView.setAdapter(adapter);
     }
 
     public static void agregarEjercicio(Ejercicio ejercicio) {
