@@ -56,7 +56,7 @@ public class SubirEjercicioActivity extends AppCompatActivity {
         subirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                // Verifica si ya se tiene el permiso de llamada
+//                //Verifica si ya se tiene el permiso de llamada
 //                if (ContextCompat.checkSelfPermission(SubirEjercicioActivity.this, android.Manifest.permission.READ_MEDIA_IMAGES)
 //                        != PackageManager.PERMISSION_GRANTED) {
 //                    // Si no se tiene el permiso, solicita el permiso
@@ -80,10 +80,9 @@ public class SubirEjercicioActivity extends AppCompatActivity {
                 if (titulo.isEmpty() || categoria.isEmpty() || descripcion.isEmpty()) {
                     Toast.makeText(SubirEjercicioActivity.this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Aqui iria la logica para guardar el ejercicio en una base de datos.
+                    //Aqui iria la logica para guardar el ejercicio en una base de datos, de momento lo guardamos en el array.
                     Ejercicio nuevoEjercicio = new Ejercicio(titulo, categoria, descripcion, R.drawable.entrenamiento, "1");
                     MainActivity.agregarEjercicio(nuevoEjercicio);
-                    // Lo mostrate en un toast para simular que se guardo
                     Toast.makeText(SubirEjercicioActivity.this, "Ejercicio Subido: " + titulo, Toast.LENGTH_SHORT).show();
                     finish();
                 }

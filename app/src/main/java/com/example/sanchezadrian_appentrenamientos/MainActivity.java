@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Datos metidos a mano (se deberian cargar desde una base de datos o API)
+        //Datos metidos a mano (se deberian cargar desde una base de datos o API)
         if (listaEjercicios.isEmpty()) {
             listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
                     "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
