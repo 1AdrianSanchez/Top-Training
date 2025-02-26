@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("App Entrenamientos");
+        getSupportActionBar().setTitle("Top Training");
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -54,17 +54,17 @@ public class MainActivity extends AppCompatActivity {
                     "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
             listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
                     "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
-            listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
+            listaEjercicios.add(new Ejercicio("7vs6 + defender contra",
                     "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-            listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
+            listaEjercicios.add(new Ejercicio("3+1+C vs 3 Superar lineas de presion",
                     "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-            listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
+            listaEjercicios.add(new Ejercicio("Reducido con apoyos exteriores en ataque",
                     "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
-            listaEjercicios.add(new Ejercicio("8x8 con transiciones + doble finalizacion",
-                    "Salida de balon", "Ejercicio para trabajar la salida de balon", R.drawable.entrenamiento, "1"));
-            listaEjercicios.add(new Ejercicio("Juego de posicion 9x6",
+            listaEjercicios.add(new Ejercicio("Presion alta y salida de balon",
+                    "Salida de balon", "Movimientos/Automatismos de la linea defensiva", R.drawable.entrenamiento, "1"));
+            listaEjercicios.add(new Ejercicio("Juego reducido 5x5+1+2C",
                     "Ataque Posicional", "Ejercicio para mejorar el ataque Posicional", R.drawable.entrenamiento, "2"));
-            listaEjercicios.add(new Ejercicio("Finalizaciones con busqueda de 3er hombre",
+            listaEjercicios.add(new Ejercicio("Circuito de fuerza con finalizacion",
                     "Finalizacion", "Ejercicio de finalizaciones a porteria", R.drawable.entrenamiento, "3"));
         }
 
