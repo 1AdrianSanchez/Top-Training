@@ -18,7 +18,7 @@
 
 - 🔎 **Búsqueda inteligente**
   - Filtrado por categoría   
-  - Barra de búsqueda con filtrado por nombre.
+  - Barra de búsqueda con filtrado por nombre
 
 - 👤 **Perfil de usuario**
   - Visualiza y edita:
