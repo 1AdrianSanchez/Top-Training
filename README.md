@@ -1,6 +1,6 @@
 # 🏋️‍♂️ Top Training - App de Entrenamientos
 
-**Top Training** es una aplicación móvil desarrollada en Android Studio que permite a los usuarios gestionar y descubrir entrenamientos personalizados. Ideal para deportistas, entrenadores o cualquier persona interesada en el entrenamiento físico.
+**Top Training** es una aplicación móvil desarrollada en Android Studio que permite a los usuarios gestionar entrenamientos. Ideal para entrenadores.
 
 ---
 
