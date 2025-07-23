@@ -7,7 +7,7 @@
 ## 📱 Funcionalidades Principales
 
 - 🔐 **Inicio de sesión**
-  - Autenticación de usuario para acceso seguro a las funcionalidades de la app.
+  - Autenticación de usuario para acceso seguro a las funcionalidades de la app. (En desarrollo)
 
 - 📤 **Subida de entrenamientos**
   - Añade entrenamientos personalizados incluyendo:
@@ -17,14 +17,13 @@
     - Imagen o video
 
 - 🔎 **Búsqueda inteligente**
-  - Barra de búsqueda con filtrado por:
-    - Nombre del entrenamiento
-    - Categoría
+  - Filtrado por categoría   
+  - Barra de búsqueda con filtrado por nombre.
 
 - 👤 **Perfil de usuario**
   - Visualiza y edita:
     - Foto de perfil
-    - Correo electrónico
+    - Nombre de usuario
 
 - 🏋️‍♀️ **Gestión de ejercicios**
   - Sube tus propios ejercicios y mantenlos organizados por categoría.
@@ -33,11 +32,18 @@
 
 ## 🧰 Tecnologías y Herramientas
 
-- **Lenguaje principal:** Java / Kotlin (especifica según tu proyecto)
+- **Lenguaje principal:** Java
 - **IDE:** Android Studio
-- **Base de datos:** Firebase / SQLite / Room (especifica la que uses)
-- **Almacenamiento multimedia:** Firebase Storage / Local
+- **Base de datos:** (En desarrollo)
+- **Almacenamiento multimedia:** (En desarrollo)
 - **Diseño de interfaz:** XML (Material Design, ConstraintLayout, etc.)
 
 ---
 
+🤝 Contribuciones
+- Las contribuciones, ideas y mejoras son bienvenidas.
+
+📬 Contacto
+- Desarrollado por Adrián Sánchez
+- 📧 Email: ass94zgz@gmail.com
+- 🌐 GitHub: @1AdrianSanchez
